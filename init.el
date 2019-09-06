@@ -17,7 +17,7 @@
     ("235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" default)))
  '(package-selected-packages
    (quote
-    (company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy))))
+    (magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -34,5 +34,8 @@
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (projectile-mode +1)
+
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
 
 
