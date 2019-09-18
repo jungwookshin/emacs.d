@@ -5,7 +5,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-(global-linum-mode 1)
+(global-display-line-numbers-mode)
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -19,7 +19,7 @@
     ("235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" default)))
  '(package-selected-packages
    (quote
-    (magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy))))
+    (wanderlust evil magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -39,5 +39,3 @@
 
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
-
-
