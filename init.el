@@ -3,7 +3,7 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 
-`;; highlight current line
+;; highlight current line
 (global-hl-line-mode)
 (set-default 'cursor-type 'hbar)
 
