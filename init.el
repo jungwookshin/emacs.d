@@ -1,8 +1,11 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
 (package-initialize)
 
 (global-display-line-numbers-mode)
@@ -19,7 +22,7 @@
     ("235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" default)))
  '(package-selected-packages
    (quote
-    (wanderlust evil magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy))))
+    (ag wanderlust evil magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
