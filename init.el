@@ -3,34 +3,31 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 
-
-
+`;; highlight current line
 (global-hl-line-mode)
-
 (set-default 'cursor-type 'hbar)
 
+;; For GUI emacs, deactivate menu and tool bars
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-(package-initialize)
-
-
+;; Display line number left
 (global-display-line-numbers-mode)
 
-(ido-mode)
+;; Don't know what this mode does exactly
+;;(ido-mode)
 
-(column-number-mode)
+;;(column-number-mode)
 
 (show-paren-mode)
 
-(package-initialize)
-
-(winner-mode)
+;;(winner-mode)
 
 (windmove-default-keybindings)
 
-(ac-config-default)
+;;(ac-config-default)
 
+(package-initialize)
 (require 'package)
 
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -44,9 +41,7 @@
     ("235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" default)))
  '(package-selected-packages
    (quote
-
     (ag auto-complete-clang switch-window ac-clang wanderlust evil magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy))))
-
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
