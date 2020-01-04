@@ -41,7 +41,7 @@
     ("235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" default)))
  '(package-selected-packages
    (quote
-    (ag auto-complete-clang switch-window ac-clang wanderlust evil magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy))))
+    (cuda-mode multiple-cursors ag auto-complete-clang switch-window ac-clang wanderlust evil magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -63,3 +63,6 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 
 (global-set-key (kbd "C-M-z") 'switch-window)
+
+(setq-default c-basic-offset 4)
+(setq-default indent-tabs-mode nil)
