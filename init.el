@@ -64,5 +64,6 @@
 
 (global-set-key (kbd "C-M-z") 'switch-window)
 
+(setq-default tab-width 4)
 (setq-default c-basic-offset 4)
-(setq-default indent-tabs-mode nil)
+;;(setq-default indent-tabs-mode nil) ;;tab to space?
