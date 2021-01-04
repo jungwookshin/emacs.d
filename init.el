@@ -8,9 +8,9 @@
 (set-default 'cursor-type 'hbar)
 
 ;; For GUI emacs, deactivate menu and tool bars
-(menu-bar-mode -1)
+;; (menu-bar-mode -1)
 (tool-bar-mode -1)
-
+(scroll-bar-mode -1)
 ;; Display line number left
 (global-display-line-numbers-mode)
 
@@ -31,17 +31,19 @@
 (require 'package)
 
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   (quote
-    ("235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" default)))
+   '("235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" default))
+ '(markdown-command "/usr/local/bin/multimarkdown")
  '(package-selected-packages
-   (quote
-    (cuda-mode multiple-cursors ag auto-complete-clang switch-window ac-clang wanderlust evil magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy))))
+   '(org-roam-server helm-bibtexkey helm-bibtex org-roam-bibtex org-roam markdown-mode julia-shell julia-repl julia-mode virtualenv elpy ssh cuda-mode multiple-cursors ag auto-complete-clang switch-window ac-clang wanderlust evil magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -53,6 +55,10 @@
 
 (ivy-mode 1)
 
+;;(use-package elpy
+;;  :ensure t
+;;  :init
+;;  (elpy-enable))
 
 (require 'projectile)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
@@ -66,4 +72,10 @@
 
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
-;;(setq-default indent-tabs-mode nil) ;;tab to space?
+(setq tramp-default-method "ssh")
+(setq-default indent-tabs-mode nil) ;;tab to space?
+
+;; Org-roam
+(add-to-list 'exec-path "/usr/bin/sqlite3")
+(setq org-roam-directory "~/db/Library.org-roam")
+(add-hook 'after-init-hook 'org-roam-mode)
