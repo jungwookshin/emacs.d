@@ -14,6 +14,8 @@
 ;; Display line number left
 (global-display-line-numbers-mode)
 
+(set-face-attribute 'default nil :font "Monaco-16" )
+
 ;; Don't know what this mode does exactly
 ;;(ido-mode)
 
@@ -24,6 +26,8 @@
 ;;(winner-mode)
 
 (windmove-default-keybindings)
+
+(add-to-list 'exec-path "/usr/local/bin")
 
 ;;(ac-config-default)
 
@@ -40,11 +44,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-
-   '("235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" default))
+   '("2f1518e906a8b60fac943d02ad415f1d8b3933a5a7f75e307e6e9a26ef5bf570" "235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" default))
  '(markdown-command "/usr/local/bin/multimarkdown")
  '(package-selected-packages
-   '(org-roam-server helm-bibtexkey helm-bibtex org-roam-bibtex org-roam markdown-mode julia-shell julia-repl julia-mode virtualenv elpy ssh cuda-mode multiple-cursors ag auto-complete-clang switch-window ac-clang wanderlust evil magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy)))
+   '(ox-latex-subfigure org-edit-latex all-the-icons-ibuffer all-the-icons-gnus all-the-icons-ivy all-the-icons-dired company-shell company-math company-ctags company-bibtex company-c-headers sr-speedbar ewal-doom-themes doom-modeline org-roam-server helm-bibtexkey helm-bibtex org-roam-bibtex org-roam markdown-mode julia-shell julia-repl julia-mode virtualenv elpy ssh cuda-mode multiple-cursors ag auto-complete-clang switch-window ac-clang wanderlust evil magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy))
+
+;'(speedbar-default-position 'left)
+'(speedbar-verbosity-level 0)
+'(sr-speedbar-right-side nil))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -53,10 +60,12 @@
  ;; If there is more than one, they won't work right.
  )
 
-(load-theme 'nimbus t)
+(load-theme 'doom-one t)
 
 (ivy-mode 1)
 
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
 ;;(use-package elpy
 ;;  :ensure t
 ;;  :init
@@ -81,3 +90,34 @@
 (add-to-list 'exec-path "/usr/bin/sqlite3")
 (setq org-roam-directory "~/db/Library.org-roam")
 (add-hook 'after-init-hook 'org-roam-mode)
+;; 
+;; (org-roam-db-location (expand-file-name (concat "org-roam." hr/hostname ".db") org-roam-directory))
+
+;;(use-package doom-themes
+;;    :ensure t
+;;    :config
+;;    (load-theme 'doom-one))
+
+;;
+(require 'doom-modeline)
+(doom-modeline-mode 1)
+
+;; GDB setup
+(setq
+ ;; use gdb-many-windows by default
+ gdb-many-windows t
+
+ ;; Non-nil means display source file containing the main routine at startup
+ gdb-show-main t
+ )
+
+(setq gdb-command-name "/usr/local/bin/gdb")
+
+(put 'upcase-region 'disabled nil)
+
+(global-set-key (kbd "<f3>") 'compile)
+(global-set-key (kbd "<f4>") 'recompile)
+;;(define-key c++-mode-map (kbd "<f3>") #'compile) ;;c++-mode-map is corre t
+;;(define-key c++-mode-map (kbd "<f4>") #'recompile)
+
+
