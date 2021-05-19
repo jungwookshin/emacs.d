@@ -14,7 +14,7 @@
 ;; Display line number left
 (global-display-line-numbers-mode)
 
-(set-face-attribute 'default nil :font "Monaco-16" )
+(set-face-attribute 'default nil :font "Monaco-11" )
 
 ;; Don't know what this mode does exactly
 ;;(ido-mode)
@@ -44,14 +44,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("2f1518e906a8b60fac943d02ad415f1d8b3933a5a7f75e307e6e9a26ef5bf570" "235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" default))
+   (quote
+    ("2f1518e906a8b60fac943d02ad415f1d8b3933a5a7f75e307e6e9a26ef5bf570" "235fefd1566948a6205fa5beb7f1eb6da59227d44fa586d3a5e556b140716284" default)))
  '(markdown-command "/usr/local/bin/multimarkdown")
  '(package-selected-packages
-   '(ox-latex-subfigure org-edit-latex all-the-icons-ibuffer all-the-icons-gnus all-the-icons-ivy all-the-icons-dired company-shell company-math company-ctags company-bibtex company-c-headers sr-speedbar ewal-doom-themes doom-modeline org-roam-server helm-bibtexkey helm-bibtex org-roam-bibtex org-roam markdown-mode julia-shell julia-repl julia-mode virtualenv elpy ssh cuda-mode multiple-cursors ag auto-complete-clang switch-window ac-clang wanderlust evil magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy))
-
-;'(speedbar-default-position 'left)
-'(speedbar-verbosity-level 0)
-'(sr-speedbar-right-side nil))
+   (quote
+    (markdown-preview-eww treemacs-icons-dired spaceline-all-the-icons treemacs-all-the-icons all-the-icons-ivy-rich ox-latex-subfigure org-edit-latex all-the-icons-ibuffer all-the-icons-gnus all-the-icons-ivy all-the-icons-dired company-shell company-math company-ctags company-bibtex company-c-headers sr-speedbar ewal-doom-themes doom-modeline org-roam-server helm-bibtexkey helm-bibtex org-roam-bibtex org-roam markdown-mode julia-shell julia-repl julia-mode virtualenv elpy ssh cuda-mode multiple-cursors ag auto-complete-clang switch-window ac-clang wanderlust evil magit company-irony irony company avy eyebrowse swiper nimbus-theme projectile ivy)))
+ '(speedbar-verbosity-level 0)
+ '(sr-speedbar-right-side nil))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -120,4 +120,4 @@
 ;;(define-key c++-mode-map (kbd "<f3>") #'compile) ;;c++-mode-map is corre t
 ;;(define-key c++-mode-map (kbd "<f4>") #'recompile)
 
-
+(setq visible-bell 1)
